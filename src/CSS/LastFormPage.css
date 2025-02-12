@@ -99,7 +99,8 @@ span{
 
 @media screen and (max-width: 500px) {
     .background{
-        width: 400px;
+        width: 350px;
+        padding: 20px;
     }
     .ticket-buttons{
         flex-direction: column;

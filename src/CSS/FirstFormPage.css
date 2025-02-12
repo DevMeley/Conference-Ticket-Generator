@@ -122,15 +122,19 @@ select:focus{
 
 @media screen and (max-width: 500px) {
     .form-container{
-        width: 400px;
+        width: 350px;
+        padding: 20px;
     }
     .form-heading{
         flex-direction: column;
         gap: 12px;
         margin-bottom: 20px;
     }
+    .form-wrapper{
+        padding: 16px;
+    }
     .info-about{
-        padding: 10px 20px;
+        padding: 10px 10px;
         justify-content: center;
         gap: 20px;
     }
@@ -140,7 +144,7 @@ select:focus{
     }
     .h2-txt{
         text-align: center;
-        font-size: 24px;
+        font-size: 24px
     }
     .p-txtt{
         text-align: center;
@@ -150,21 +154,21 @@ select:focus{
     .p-txt{
         text-align: center;
         padding-left: 20px;
-       font-size: 12px;
+       font-size: 14px;
     }
     .cards{
         flex-direction: column;
     }
     .card{
-        width: 220px;
+        width: 240px;
     }
     .form-buttons{
         flex-direction: column;
     }
     .cancel-btn{
-        padding: 12px 100px;
+        padding: 12px 110px;
     }
     .next-btn{
-        padding: 12px 110px;
+        padding: 12px 120px;
     }
 }
