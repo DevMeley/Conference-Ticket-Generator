@@ -47,7 +47,9 @@
 }
 .ticket-background{
     background-image: url("Assets/Images/TICKET.png");
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     margin: auto;
     height: 600px;
     width: 300px;
@@ -93,19 +95,44 @@ span{
     border: 1px solid #12464E;
     padding: 4px;
     border-radius: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
 
 @media screen and (max-width: 500px) {
     .background{
-        width: 350px;
+        width: 300px;
         padding: 20px;
     }
     .ticket-buttons{
         flex-direction: column;
     }
     .download-ticket{
-        padding: 12px 100px;
+        padding: 12px 80px;
+    }
+    .book{
+        padding: 12px 60px;
+    }
+    .ticket-background{
+        width: 260px;
+        margin: auto;
+    }
+    .ticket-contents{
+        width: 200px;
+        top: 55px;
+        gap: 10px;
+    }
+    .heading p{
+        text-align: center;
+        font-size: 12px;
+    }
+    .heading h2{
+        font-size: 18px;
+    }
+    .info span{
+        font-size: 12px;
     }
 }
