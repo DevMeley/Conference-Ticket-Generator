@@ -1,0 +1,91 @@
+.background{
+    margin: 50px auto;
+    padding: 48px;
+    border: 1px solid #0E464F;
+    background-color: #041E23;
+    border-radius: 40px;
+    width: 700px;
+}
+.ticket-heading{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    
+}
+.text h2 {
+    text-align: center;
+}
+.text p{
+    text-align: center;
+    margin-bottom: 32px;
+}
+.ticket-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.book{
+    padding: 12px 90px;
+    color: #197686;
+    background-color: transparent;
+    border: 1px solid #197686;
+    border-radius: 8px;
+}
+.download-ticket{
+    padding: 12px 90px;
+    color: white;
+    background-color: #197686;
+    border-radius: 8px;
+    border: none;
+}
+.ticket-background{
+    background-image: url("Assets/Images/TICKET.png");
+    background-repeat: no-repeat;
+    margin: auto;
+    height: 600px;
+    width: 300px;
+}
+.ticket-contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #24A0B5;
+    margin: auto;
+    width: 280px;
+    position: relative;
+    top: 30px;
+    border-radius: 16px;
+}
+.avatar img{
+    height: 140px;
+    width: 140px;
+    border: 4px solid #24A0B5;
+    border-radius: 12px;
+}
+.attendee-info{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #08343C;
+    
+}
+.last-child{
+    grid-column: span 2;
+}
+span{
+    font-size: 12px;
+    font-weight: lighter;
+}
+.info p{
+    font-size: 10px;
+    color: #0E464F;
+}
+.info{
+    border: 1px solid #12464E;
+    padding: 4px;
+    border-radius: 8px;
+}
