@@ -9,11 +9,16 @@
 .ticket-heading{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 32px;
     
 }
+.text{
+    margin-top: 15px;
+}
 .text h2 {
     text-align: center;
+    margin-top: 15px;
 }
 .text p{
     text-align: center;
@@ -24,7 +29,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 56px;
 }
 .book{
     padding: 12px 90px;
@@ -88,4 +93,18 @@ span{
     border: 1px solid #12464E;
     padding: 4px;
     border-radius: 8px;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .background{
+        width: 400px;
+    }
+    .ticket-buttons{
+        flex-direction: column;
+    }
+    .download-ticket{
+        padding: 12px 100px;
+    }
 }

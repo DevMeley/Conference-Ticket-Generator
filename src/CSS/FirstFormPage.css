@@ -118,3 +118,53 @@ select:focus{
     gap: 20px;
     margin-top: 20px;
 }
+
+
+@media screen and (max-width: 500px) {
+    .form-container{
+        width: 400px;
+    }
+    .form-heading{
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    .info-about{
+        padding: 10px 20px;
+        justify-content: center;
+        gap: 20px;
+    }
+    .location{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .h2-txt{
+        text-align: center;
+        font-size: 24px;
+    }
+    .p-txtt{
+        text-align: center;
+        padding: 0 20px;
+        font-size: 14px;
+    }
+    .p-txt{
+        text-align: center;
+        padding-left: 20px;
+       font-size: 12px;
+    }
+    .cards{
+        flex-direction: column;
+    }
+    .card{
+        width: 220px;
+    }
+    .form-buttons{
+        flex-direction: column;
+    }
+    .cancel-btn{
+        padding: 12px 100px;
+    }
+    .next-btn{
+        padding: 12px 110px;
+    }
+}
