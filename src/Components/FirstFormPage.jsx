@@ -1,5 +1,7 @@
 import React from "react";
 import "../CSS/FirstFormPage.css";
+import { background } from "@cloudinary/url-gen/qualifiers/focusOn";
+import { BackgroundColor } from "@cloudinary/url-gen/actions/background/actions/BackgroundColor";
 
 export default function FirstFormPage({
   callbackProp,
@@ -32,7 +34,7 @@ export default function FirstFormPage({
           <div className="ticket-type">
             <p>Select Ticket Type:</p>
             <div className="cards">
-              <div className="card">
+              <div className="card" onClick={()=> {className="clicked"}}>
                 <h3>Free</h3>
                 <p>Regualer Access</p>
                 <p>20/52</p>
@@ -59,9 +61,9 @@ export default function FirstFormPage({
               onChange={(e) => setFormData({...formData, ticketNumber: e.target.value})}
             >
               <option value=""></option>
-              <option value="5">1</option>
-              <option value="6">2</option>
-              <option value="7">3</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
             </select>
           </div>
           <div className="form-buttons">

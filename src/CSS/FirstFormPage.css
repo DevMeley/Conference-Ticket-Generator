@@ -65,6 +65,10 @@ hr{
     width: 158px;
     border-radius: 12px;
 }
+.card:hover{
+    background-color: #197686;
+}
+
 .cards{
     display: flex;
     justify-content: space-between;

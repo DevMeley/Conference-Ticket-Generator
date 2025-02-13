@@ -11,6 +11,34 @@ export default function SecondFormPage({
   setFormData,
   error
 }) {
+    const handleFileUpload = async (e) =>{
+      const file = e.target.files[0]
+
+      if (!file) return
+      setFormData({...formData, profilePhoto: file});
+
+      const data = new FormData()
+      data.append("file", file)
+      data.append("upload_preset", "Conference_ticket_avatar")
+      data.append("cloud_name", "dhrrttilw")
+
+      const res = await fetch("https://api.cloudinary.com/v1_1/dhrrttilw/image/upload",{
+        method: "POST",
+        body: data
+      })
+      const uploadedURL = await res.json()
+
+      setFormData(prev => ({
+        ...prev,
+        profilePhotoURL: uploadedURL.url
+      }));
+
+      console.log(uploadedURL.url)
+    }
+    const handleOptionChange = (event) => {
+      const selectedValues = Array.from(event.target.value, (option) => option.value);
+      setFormData(selectedValues)
+    }
   return (
     <div className="form-container">
       <div className="form-heading">
@@ -29,7 +57,8 @@ export default function SecondFormPage({
                 {formData.profilePhoto? <p className="hidden">Drag & drop or click to upload</p>:<p>Drag & drop or click to upload</p> }
                 <input
                   type="file"
-                  onChange={(e)=> setFormData({...formData, profilePhoto: e.target.files[0]})}
+                  onChange={handleFileUpload}
+                  accept="image/*"
                 />
               </label>
             </div>

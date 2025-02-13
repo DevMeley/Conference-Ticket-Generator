@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FirstFormPage from "./FirstFormPage";
 import SecondFormPage from "./SecondFormPage";
 import LastFormPage from "./LastFormPage";
@@ -11,6 +11,7 @@ export default function Form() {
     name: "",
     email: "",
     specialRequest: "",
+    profilePhotoURL: "",
   });
   const [barCode, setBarCode] = useState("");
   const [error, setError] = useState("");
@@ -29,7 +30,7 @@ export default function Form() {
       ticketNumber: 1,
       email: "",
       specialRequest: "",
-      profilePhoto: "",
+      
     });
   };
 
@@ -46,6 +47,26 @@ export default function Form() {
       setTicketGenerated(true);
     }
   };
+
+  // Save form data to local storage on load
+  useEffect(()=>{
+    localStorage.setItem("formData", JSON.stringify(formData))
+    localStorage.setItem("ticketGenerated", JSON.stringify(ticketGenerated));
+  },[formData, ticketGenerated])
+
+
+  // retrieve save data from local storage
+  useEffect(()=>{
+    const savedData = JSON.parse(localStorage.getItem("formData"))
+    const savedTicketState = JSON.parse(localStorage.getItem("ticketGenerated"));
+    if (savedData) {
+      setFormData(savedData)
+      setTicketGenerated(savedData)
+    }
+    if (savedTicketState) {
+      setTicketGenerated(savedTicketState);
+    }
+  },[])
 
   const validateForm = () => {
     const newErrors = {};
@@ -99,6 +120,7 @@ export default function Form() {
           count={count}
           cancelCallBack={cancel}
           formData={formData}
+          ticketGenerated={ticketGenerated}
         />
       )}
     </div>

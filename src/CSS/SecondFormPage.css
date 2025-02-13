@@ -46,7 +46,7 @@ img{
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #052228;
+    background-color: #05222867;
 }
 .drag-and-drop:hover .hidden{
     display: block;
