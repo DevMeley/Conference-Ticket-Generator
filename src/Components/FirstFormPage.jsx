@@ -5,10 +5,9 @@ export default function FirstFormPage({
   callbackProp,
   count,
   cancelCallBack,
-  ticketType,
-  ticketNumber,
-  setTicketType,
-  setTicketNumber,
+  formData,
+  setFormData,
+  error
 }) {
   return (
     <div>
@@ -56,8 +55,8 @@ export default function FirstFormPage({
             </label>
             <select
               name="ticketNumber"
-              value={ticketNumber}
-              onChange={(e) => setTicketNumber(e.target.value)}
+              value={formData.ticketNumber}
+              onChange={(e) => setFormData({...formData, ticketNumber: e.target.value})}
             >
               <option value=""></option>
               <option value="5">1</option>

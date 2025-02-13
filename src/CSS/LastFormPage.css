@@ -104,7 +104,7 @@ span{
 
 @media screen and (max-width: 500px) {
     .background{
-        width: 300px;
+        width: 350px;
         padding: 20px;
     }
     .ticket-buttons{
@@ -117,13 +117,13 @@ span{
         padding: 12px 60px;
     }
     .ticket-background{
-        width: 260px;
+        width: 280px;
         margin: auto;
     }
     .ticket-contents{
-        width: 200px;
-        top: 55px;
-        gap: 10px;
+        width: 250px;
+        top: 60px;
+        gap: 16px;
     }
     .heading p{
         text-align: center;
@@ -131,6 +131,7 @@ span{
     }
     .heading h2{
         font-size: 18px;
+        margin-top: 10px;
     }
     .info span{
         font-size: 12px;

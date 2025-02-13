@@ -8,10 +8,15 @@
 }
 .image-background{
     height: 200px;
-    background-color: #010101;
-    opacity: 20%;
+    background-color: #01010165;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+img{
+    width:  100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
 }
 .upload-photo-container{
     position: relative;
@@ -34,6 +39,17 @@
     width: 150px;
     text-align: center;
     margin: 100px auto;
+}
+.hidden{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #052228;
+}
+.drag-and-drop:hover .hidden{
+    display: block;
 }
 .input{
     display: flex;
@@ -90,23 +106,29 @@ textarea{
     gap: 20px;
     margin-top: 20px;
 }
+.error {
+    color: red;
+    font-size: 0.875em;
+    display: block;
+    margin-top: 5px;
+  }
 
 
 @media screen and (max-width:500px) {
     .form-container-wrapper{
         border: none;
         background-color: #08252B;
-        width: 250px;
+        width: 300px;
         padding: 16px;
     }
     .image-background{
         background-color: #08252B;
     }
     .drag-and-drop{
-        right: 10%;
+        right: 12%;
         bottom: 20%;
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
     }
     .drag-and-drop p{
         margin: 60px auto;
@@ -115,9 +137,9 @@ textarea{
         flex-direction: column;
     }
     .back-btn{
-        padding: 12px 90px;
+        padding: 12px 115px;
     }
     .get-btn{
-        padding: 12px 50px;
+        padding: 12px 80px;
     }
 }

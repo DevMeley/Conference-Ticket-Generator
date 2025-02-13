@@ -4,6 +4,7 @@ import "../CSS/LastFormPage.css";
 export default function LastFormPage({
   count,
   cancelCallBack,
+  formData
 }) {
   return (
     <div>
@@ -24,16 +25,16 @@ export default function LastFormPage({
               <p>📅 March 15, 2025 | 7:00 PM</p>
             </div>
             <div className="avatar">
-              <img src="Assets\Images\avatar.png" alt="" />
+              <img src={formData.profilePhoto} alt="" />
             </div>
             <div className="attendee-info">
               <div className="info">
                 <p>Enter your name</p>
-                <span>Ayantola Monsurat</span>
+                <span>{formData.name}</span>
               </div>
               <div className="info">
                 <p>Enter your Email</p>
-                <span>AyantolaMonsurat@gnail.com</span>
+                <span>{formData.email}</span>
               </div>
               <div className="info">
                 <p>Ticket Type</p>
@@ -41,13 +42,12 @@ export default function LastFormPage({
               </div>
               <div className="info">
                 <p>Ticket number</p>
-                <span>1</span>
+                <span>{formData.ticknumber}</span>
               </div>
               <div className="info last-child">
                 <p>Special request</p>
                 <span>
-                  Nil ? Or the users sad story they write in there gets this
-                  whole space, Max of three rows
+                  {formData.specialRequest}
                 </span>
               </div>
             </div>

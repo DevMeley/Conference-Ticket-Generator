@@ -7,14 +7,9 @@ export default function SecondFormPage({
   callbackProp,
   count,
   callbackProp2,
-  profilePhoto,
-  email,
-  name,
-  specialRequest,
-  setProfilePhoto,
-  setName,
-  setEmail,
-  setSpecialRequest
+  formData,
+  setFormData,
+  error
 }) {
   return (
     <div className="form-container">
@@ -25,34 +20,48 @@ export default function SecondFormPage({
       <div className="form-container-wrapper">
         <div className="upload-photo-container form-wrapper">
           <p>Upload Photo</p>
-          <div className="image-background">
-            {profilePhoto && (<img className="image-background" src={URL.createObjectURL(profilePhoto)}/>)}
-          </div>
-            <label className="drag-and-drop">
-              <p>Drag & drop or click to upload</p>
-              <input
-                type="file"
-                value={profilePhoto}
-                onChange={(e)=>setProfilePhoto(e.target.files[0])}
-              />
-            </label>
+          <div>
+            <div className="image-background">
+              <label className="drag-and-drop">
+                {formData.profilePhoto && (
+                  <img  src={URL.createObjectURL(formData.profilePhoto)}/>
+                )}
+                {formData.profilePhoto? <p className="hidden">Drag & drop or click to upload</p>:<p>Drag & drop or click to upload</p> }
+                <input
+                  type="file"
+                  onChange={(e)=> setFormData({...formData, profilePhoto: e.target.files[0]})}
+                />
+              </label>
+            </div>
+            
+        </div>
         </div>
         <hr />
         <div className="inputs">
           <div className="input">
             <label>Enter your name</label>
-            <input type="text" value={name} onChange={(e)=> setName(e.target.value)}/>
+            <input type="text" value={formData.name} onChange={(e)=> setFormData({...formData, name: e.target.value})}/>
           </div>
+          {error.name && (
+          <span className="error">
+            {error.name}
+          </span>
+          )}
           <div className="input">
             <label>Enter your Email</label>
-            <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+            <input type="text" value={formData.email} onChange={(e)=>setFormData({...formData, email: e.target.value})}/>
           </div>
+          {error.email && (
+          <span className="error">
+            {error.email}
+          </span>
+          )}
           <div className="input">
             <label>Special Request</label>
             <textarea
                 name="description"
-                value={specialRequest}
-                onChange={(e)=>setSpecialRequest(e.target.value)}
+                value={formData.specialRequest}
+                onChange={(e)=>setFormData({...formData, specialRequest: e.target.value})}
                 placeholder="Text area"
                 required
             />
