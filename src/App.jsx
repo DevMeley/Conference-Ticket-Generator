@@ -1,15 +1,20 @@
 import Form from "./Components/Form"
+import FrontPage from "./Components/FrontPage"
 import Header from "./Components/Header"
-// import Just from "./Components/just"
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 function App() {
   
   return (
     <>
-      {/* <Just /> */}
       <Header />
-      <Form />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<FrontPage />}/>
+          <Route path="/form" element={<Form />}/> 
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

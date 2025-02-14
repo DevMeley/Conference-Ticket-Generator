@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../CSS/LastFormPage.css";
 import  html2pdf  from "html2pdf.js";
 import { useTicket } from './TicketContext';
@@ -11,10 +11,10 @@ export default function LastFormPage({
   
   const {ticketTypes, selectedCard } = useTicket();
   
-  const handlePdf = () => {
+  const handlePdf = async () => {
     const element = document.getElementById("download");
-    element.style.display = 'block';
-    html2pdf()
+     element.style.display = 'block';
+    await html2pdf()
       .set({
         margin: 0,
         filename: "ticket.pdf",

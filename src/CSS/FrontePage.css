@@ -1,0 +1,27 @@
+.body-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    min-width: 50vh;
+}
+.body-text h2{
+    font-family: "Road Rage";
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+.btn{
+    padding: 12px 50px;
+    color: #197686;
+    background-color: #197686;
+    border-radius: 8px;
+    border: none;
+    color: white;
+}
