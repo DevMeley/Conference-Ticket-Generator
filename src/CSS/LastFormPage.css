@@ -19,6 +19,12 @@
     text-align: center;
     margin-top: 15px;
 }
+.heading h2{
+    font-size: 43px;
+    font-family: "Road Rage";
+    text-align: center;
+    margin-top: 50px;
+}
 .text p{
     text-align: center;
     margin-bottom: 32px;
@@ -49,33 +55,19 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin: auto;
+    margin: 50px auto;
     height: 600px;
     width: 300px;
 }
-.bar-code{
-    width: 250px;
-    position: absolute;
-    bottom: -54%;
-    right: 41%;
-}
-.barcode{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
-}
+
 .ticket-contents{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    border: 1px solid #24A0B5;
-    margin: auto;
+    margin: 50px auto;
     width: 280px;
-    position: relative;
-    top: 30px;
     border-radius: 16px;
 }
 .avatar img{
@@ -113,11 +105,13 @@ span{
 .info{
     border: 1px solid #12464E;
     padding: 4px;
-    border-radius: 8px;
+    /* border-radius: 8px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap; */
 }
+
+
 
 
 
@@ -141,8 +135,7 @@ span{
     }
     .ticket-contents{
         width: 250px;
-        /* top: 60px; */
-        /* gap: 16px; */
+        
     }
     .heading p{
         text-align: center;
@@ -150,14 +143,10 @@ span{
     }
     .heading h2{
         font-size: 18px;
-        margin-top: 10px;
+        margin-top: 60px;
     }
     .info span{
         font-size: 12px;
     }
-    .bar-code{
-        width: 220px;
-        bottom: -42%;
-        right: 26%;
-    }
+    
 }

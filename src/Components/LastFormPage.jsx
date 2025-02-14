@@ -13,20 +13,17 @@ export default function LastFormPage({
   
   const handlePdf = () => {
     const element = document.getElementById("download");
-    element.style.display = "block";
+    element.style.display = 'block';
     html2pdf()
       .set({
         margin: 0,
         filename: "ticket.pdf",
         image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 3, useCORS: true }, // Ensure CORS is enabled
+        html2canvas: { scale: 3, useCORS: true },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
       })
       .from(element)
       .save();
-      setTimeout(() => {
-        element.style.display = "";
-      }, 1000);
   };
   
   return (
@@ -76,7 +73,7 @@ export default function LastFormPage({
               </div>
             </div>
           </div>
-          <div className="bar-code"><img className="barcode" src="Assets\Images\Bar Code.png" alt="" /></div>
+          {/* <div className="bar-code"><img className="barcode" src="Assets\Images\Bar Code.png" alt="" /></div> */}
         </div>
         <div className="ticket-buttons">
           <button
@@ -90,6 +87,7 @@ export default function LastFormPage({
           <button className="download-ticket" onClick={handlePdf}>Download Ticket</button>
         </div>
       </div>
+      
     </div>
   );
 }

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../CSS/FirstFormPage.css";
 import { useTicket } from "./TicketContext";
-import { background } from "@cloudinary/url-gen/qualifiers/focusOn";
-import { BackgroundColor } from "@cloudinary/url-gen/actions/background/actions/BackgroundColor";
+
 
 export default function FirstFormPage({
   callbackProp,
@@ -23,7 +22,7 @@ export default function FirstFormPage({
     <div>
       <div className="form-container">
         <div className="form-heading">
-          <h3>Ticket Selection</h3>
+          <h3 className="h3">Ticket Selection</h3>
           <span>Step {count}/3</span>
         </div>
         <div className="line1"></div>
@@ -35,8 +34,7 @@ export default function FirstFormPage({
               your spot now.
             </p>
             <div className="location">
-              <p className="p-txt">📍 [Event Location]</p>
-              <p className="p-txt">March 15, 2025 | 7:00 PM</p>
+              <p className="p-txt">📍 [Event Location] || March 15, 2025 | 7:00 PM</p>
             </div>
           </div>
           <hr />
