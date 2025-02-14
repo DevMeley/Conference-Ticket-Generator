@@ -1,7 +1,12 @@
+@font-face {
+  font-family: "JejuMyeongjo";
+  src: url("Assets\Images\Fonts\JejuMyeongjo\jejumyeongjo\JejuMyeongjo-Regular.ttf");
+}
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "JejuMyeongjo";
 }
 body{
   background-color: #02191D;

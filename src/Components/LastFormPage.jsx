@@ -1,60 +1,34 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../CSS/LastFormPage.css";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+import  html2pdf  from "html2pdf.js";
+import { useTicket } from './TicketContext';
 
 export default function LastFormPage({
   count,
   cancelCallBack,
   formData,
 }) {
-
-  const elementRef = useRef(null)
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const images = elementRef.current?.querySelectorAll("img");
-    const promises = Array.from(images).map((img) => 
-      new Promise((resolve) => {
-        if (img.complete) resolve();
-        else img.onload = resolve;
+  
+  const {ticketTypes, selectedCard } = useTicket();
+  
+  const handlePdf = () => {
+    const element = document.getElementById("download");
+    element.style.display = "block";
+    html2pdf()
+      .set({
+        margin: 0,
+        filename: "ticket.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 3, useCORS: true }, // Ensure CORS is enabled
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
       })
-    );
-
-    Promise.all(promises).then(() => setIsLoaded(true));
-  }, []);
-
-  const generatePdf = async () => {
-    await document.fonts.ready;
-    if (!isLoaded) {
-      alert("Please wait for the ticket to fully load before downloading.");
-      return;
-    }
-
-    const input = elementRef.current;
-
-    html2canvas(input, {
-      scale: 3, 
-      useCORS: true, 
-      logging: false,
-      backgroundColor:null,
-      scrollY: -window.scrollY,
-      logging: true,
-      letterRendering: 1,
-      allowTaint: true,
-      foreignObjectRendering: true
-    }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4");
-      const imgWidth = 210;
-      const imgHeight = 600
-
-      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-      pdf.save("ticket.pdf");
-    });
+      .from(element)
+      .save();
+      setTimeout(() => {
+        element.style.display = "";
+      }, 1000);
   };
-
-
+  
   return (
     <div>
       <div className="background">
@@ -62,11 +36,12 @@ export default function LastFormPage({
           <h3>Ready</h3>
           <span>Step {count}/3</span>
         </div>
+        <div className="line3"></div>
         <div className="text">
           <h2>Your Ticket is Booked!</h2>
           <p>Check your email for a copy or you can download</p>
         </div>
-        <div className="ticket-background" ref={elementRef}>
+        <div className="ticket-background" id="download">
           <div className="ticket-contents">
             <div className="heading">
               <h2>Techember Fest ”25</h2>
@@ -87,7 +62,7 @@ export default function LastFormPage({
               </div>
               <div className="info">
                 <p>Ticket Type</p>
-                <span>VIP</span>
+                {selectedCard? <span>{selectedCard.type}</span> : ''}
               </div>
               <div className="info">
                 <p>Ticket number</p>
@@ -112,7 +87,7 @@ export default function LastFormPage({
           >
             Book Another Ticket
           </button>
-          <button className="download-ticket" onClick={generatePdf}>Download Ticket</button>
+          <button className="download-ticket" onClick={handlePdf}>Download Ticket</button>
         </div>
       </div>
     </div>

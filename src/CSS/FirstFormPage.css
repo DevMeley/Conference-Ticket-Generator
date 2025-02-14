@@ -42,6 +42,7 @@ hr{
 .h2-txt{
     text-align: center;
     font-size: 46px;
+    font-family: "JejuMyeongjo";
 }
 .p-txtt{
     text-align: center;
@@ -68,7 +69,21 @@ hr{
 .card:hover{
     background-color: #197686;
 }
-
+.clicked-card{
+    background-color: #197686;
+}
+.line1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(
+      to right,
+      #24A0B5 30%,    
+      #0E464F 30%  
+    )
+}
 .cards{
     display: flex;
     justify-content: space-between;

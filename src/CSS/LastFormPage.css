@@ -10,7 +10,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
     
 }
 .text{
@@ -57,7 +56,7 @@
 .bar-code{
     width: 250px;
     position: absolute;
-    bottom: -47%;
+    bottom: -54%;
     right: 41%;
 }
 .barcode{
@@ -99,6 +98,14 @@ span{
     font-size: 12px;
     font-weight: lighter;
 }
+.line3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #24A0B5;
+}
 .info p{
     font-size: 10px;
     color: #0E464F;
@@ -134,8 +141,8 @@ span{
     }
     .ticket-contents{
         width: 250px;
-        top: 60px;
-        gap: 16px;
+        /* top: 60px; */
+        /* gap: 16px; */
     }
     .heading p{
         text-align: center;

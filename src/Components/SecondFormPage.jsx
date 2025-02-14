@@ -35,16 +35,14 @@ export default function SecondFormPage({
 
       console.log(uploadedURL.url)
     }
-    const handleOptionChange = (event) => {
-      const selectedValues = Array.from(event.target.value, (option) => option.value);
-      setFormData(selectedValues)
-    }
+    
   return (
     <div className="form-container">
       <div className="form-heading">
         <h3>Attendee Details</h3>
         <span>Step {count}/3</span>
       </div>
+      <div className="line2"></div>
       <div className="form-container-wrapper">
         <div className="upload-photo-container form-wrapper">
           <p>Upload Photo</p>

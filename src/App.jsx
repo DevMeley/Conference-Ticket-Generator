@@ -1,6 +1,6 @@
 import Form from "./Components/Form"
 import Header from "./Components/Header"
-import Just from "./Components/just"
+// import Just from "./Components/just"
 
 
 function App() {

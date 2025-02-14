@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import FirstFormPage from "./FirstFormPage";
 import SecondFormPage from "./SecondFormPage";
 import LastFormPage from "./LastFormPage";
+import { TicketProvider } from "./TicketContext";
 
 export default function Form() {
   const [count, setCount] = useState(1);
@@ -89,40 +90,43 @@ export default function Form() {
 
   return (
     <div>
-      <form onSubmit={handleForm}>
-        {count === 1  && (
-          <FirstFormPage
+      <TicketProvider>
+        <form onSubmit={handleForm}>
+          {count === 1  && (
+            <FirstFormPage
+              callbackProp={stepCountIncrement}
+              callbackProp2={stepCountDecrement}
+              count={count}
+              cancelCallBack={cancel}
+              formData={formData}
+              setFormData={setFormData}
+              error={error}
+            />
+          ) }
+          {count === 2  &&  
+          (
+            <SecondFormPage
+              callbackProp={stepCountIncrement}
+              callbackProp2={stepCountDecrement}
+              count={count}
+              formData={formData}
+              setFormData={setFormData}
+              error={error}
+            />
+          )}
+        </form>
+        { count === 3 && (
+          <LastFormPage
             callbackProp={stepCountIncrement}
             callbackProp2={stepCountDecrement}
             count={count}
             cancelCallBack={cancel}
             formData={formData}
-            setFormData={setFormData}
-            error={error}
-          />
-        ) }
-        {count === 2  &&  
-        (
-          <SecondFormPage
-            callbackProp={stepCountIncrement}
-            callbackProp2={stepCountDecrement}
-            count={count}
-            formData={formData}
-            setFormData={setFormData}
-            error={error}
+            ticketGenerated={ticketGenerated}
           />
         )}
-      </form>
-      { count === 3 && (
-        <LastFormPage
-          callbackProp={stepCountIncrement}
-          callbackProp2={stepCountDecrement}
-          count={count}
-          cancelCallBack={cancel}
-          formData={formData}
-          ticketGenerated={ticketGenerated}
-        />
-      )}
+      </TicketProvider>
+      
     </div>
   );
 }
